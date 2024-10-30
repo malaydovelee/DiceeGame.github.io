@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-blue: #000080;
+    --light-blue: #0453c5;
+    --gray: #808080;
+    --dark-gray: #373236;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(300deg, #1c1a90, #b6bfa7, #1c1a90);
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.container > p {
+    color: #000000;
+    font-size: 3.75rem;
+    text-transform: uppercase;
+}
+
+.container > h1 {
+    color: #000000;
+    font-size: 2.25rem;
+    margin-top: 3rem;
+    margin-bottom: 6.25rem;
+    text-transform: uppercase;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.player-1,
+.player-2 {
+    display: flex;
+    flex: 1;
+    font-size: 2rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+
+}
+
+button {
+    border: none;
+    color: #000;
+    background-color: #e71bc9;
+    padding: 10px;
+    cursor: alias;
+    width: auto;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: transform 0.3s box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #752a7b;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #071010;
+
+}
+
+.btn-color {
+    background-color: #5858ab;
+}
+
+.container > button {
+    background-color: var(--light-blue);
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: initial;
+    color: #0e0a0a;
+
+}
+
+.container > button:hover {
+    background-color: #2b5579;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dices-images {
+    margin-bottom: 1rem;
+}
+
+img {
+    width: 80%;
+}
+
+span {
+    font-size: 3.125rem;
+    font-weight: 700;
+}
+
+@media screen  and (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .player-1,
+    .player-2 {
+        margin: 1rem 0;
+    }
+}
+
+@keyframes winnerScale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+ 
+@keyframes winnerColorChange {
+    0% {
+        color: #ff0000;
+    }
+    50% {
+        color: white;
+    }
+    100% {
+        color: #0000ff;
+    }
+
+}
+.winner {
+    animation: winnerScale 1s ease-in-out infinite,
+    winnerColorChange 2s ease-in-out infinite;
+    transform-origin: center;
+    background: linear-gradient(300deg, #1c1a90, #b6bfa7, #1c1a90);
+}
